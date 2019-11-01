@@ -13,21 +13,22 @@ class Play extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<GameBloc>(
-        builder: (BuildContext context) => GameBloc(type)..add(StartGame()),
-        child: Scaffold(
-          key: _playKey,
-          appBar: GameAppBar(),
-          body: ListView(
-            children: [
-              Center(
-                child: Container(
-                  height: MediaQuery.of(context).size.height - 87,
-                  width: MediaQuery.of(context).size.width,
-                  child: Board(),
-                ),
+      builder: (BuildContext context) => GameBloc(type)..add(StartGame()),
+      child: Scaffold(
+        key: _playKey,
+        appBar: GameAppBar(),
+        body: ListView(
+          children: [
+            Center(
+              child: Container(
+                height: MediaQuery.of(context).size.height - 80,
+                width: MediaQuery.of(context).size.width,
+                child: Board(),
               ),
-            ],
-          ),
-        ));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
