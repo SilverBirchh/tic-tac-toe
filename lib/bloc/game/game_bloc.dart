@@ -96,9 +96,13 @@ class GameBloc extends Bloc<GameEvent, GameState> {
 
   Stream<GameState> _takeBotGoToState(TakeBotGo event, GameState state) async* {
     final int index = _randomIndex(state);
-    await Future.delayed(
-      Duration(seconds: 1),
-    );
+
+    if (type.gameType == GAME_TYPE.BVB) {
+      await Future.delayed(
+        Duration(seconds: 1),
+      );
+    }
+
     add(TakeGo(index: index));
   }
 

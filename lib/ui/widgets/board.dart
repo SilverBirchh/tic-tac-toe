@@ -29,7 +29,6 @@ class Board extends StatelessWidget {
                     itemBuilder: (BuildContext context, int index) {
                       final String value = gameState.game.squares[index];
                       return GestureDetector(
-
                         onTap: () {
                           if ((gameState.type.gameType == GAME_TYPE.PVB &&
                                   gameState.game.xIsNext) ||
@@ -37,6 +36,7 @@ class Board extends StatelessWidget {
                             BlocProvider.of<GameBloc>(context).add(
                               TakeGo(index: index),
                             );
+                            return;
                         },
                         child: Container(
                           decoration: BoxDecoration(

@@ -21,7 +21,7 @@ class Play extends StatelessWidget {
             children: [
               Center(
                 child: Container(
-                  height: MediaQuery.of(context).size.height,
+                  height: MediaQuery.of(context).size.height - 87,
                   width: MediaQuery.of(context).size.width,
                   child: Board(),
                 ),
