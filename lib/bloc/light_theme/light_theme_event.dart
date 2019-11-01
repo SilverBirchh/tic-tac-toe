@@ -1,0 +1,1 @@
+enum LightThemeEvent { on, off }
